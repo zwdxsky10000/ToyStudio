@@ -1,4 +1,4 @@
-namespace Engine.Platform
+namespace ToyStudio.Engine.Platform
 {
     public interface IPlatform
     {
