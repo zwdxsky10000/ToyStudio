@@ -8,7 +8,7 @@ namespace ToyStudio.Engine.Logger
         private static Logger s_DefaultLog = null;
         static Log()
         {
-            s_DefaultLog = LogManager.GetLogger();
+            s_DefaultLog = LogMgr.GetLogger();
 
             s_DefaultLog.AddMetaData("UnityVersion", Application.unityVersion);
 

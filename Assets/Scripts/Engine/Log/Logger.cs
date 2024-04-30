@@ -43,7 +43,7 @@ namespace ToyStudio.Engine.Logger
         
         public void PrintLog(LogLevel level, string message)
         {
-            LogEntry logEntry = LogManager.GetLogEntry();
+            LogEntry logEntry = LogMgr.GetLogEntry();
             logEntry.time = DateTime.Now;
             logEntry.Level = level;
             logEntry.ThreadID = Thread.CurrentThread.ManagedThreadId;

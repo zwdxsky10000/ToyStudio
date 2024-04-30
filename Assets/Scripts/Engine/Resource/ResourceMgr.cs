@@ -1,6 +1,6 @@
 namespace ToyStudio.Engine.Resource
 {
-    public class ResourceManager
+    public class ResourceMgr
     {
         
     }

@@ -2,11 +2,7 @@ using System;
 
 namespace ToyStudio.Engine.Logger
 {
-    
-    
-    
-    
-    public class LogManager
+    public class LogMgr
     {
         public static Logger GetLogger(string tag = "Default")
         {
