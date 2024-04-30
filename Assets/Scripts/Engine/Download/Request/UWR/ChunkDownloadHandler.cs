@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace LinkGo.Common.Download
+namespace ToyStudio.Engine.Download.Request
 {
     public class ChunkDownloadHandler : DownloadHandlerScript
     {
@@ -21,7 +21,7 @@ namespace LinkGo.Common.Download
         {
             get
             {
-                return m_DownloadSpeed*100%(1024 * 100);
+                return m_DownloadSpeed * 100 % (1024 * 100);
             }
         }
 
@@ -69,16 +69,16 @@ namespace LinkGo.Common.Download
         /// <summary>
         /// 当从网络接收数据时的回调，每帧调用一次
         /// </summary>
-        /// <param name="data">接收到的数据字节流，总长度为构造函数定义的200kb，并非所有的数据都是新的</param>
+        /// <param name="reveiveData">接收到的数据字节流，总长度为构造函数定义的200kb，并非所有的数据都是新的</param>
         /// <param name="dataLength">接收到的数据长度，表示data字节流数组中有多少数据是新接收到的，即0-dataLength之间的数据是刚接收到的</param>
         /// <returns>返回true表示当下载正在进行，返回false表示下载中止</returns>
-        protected override bool ReceiveData(byte[] data, int dataLength)
+        protected override bool ReceiveData(byte[] reveiveData, int dataLength)
         {
-            if (data == null || data.Length == 0)
+            if (reveiveData == null || reveiveData.Length == 0)
             {
                 return false;
             }
-            m_fStream.Write(data, 0, dataLength);
+            m_fStream.Write(reveiveData, 0, dataLength);
             DownedLength += (ulong)dataLength;
 
             //统计下载速度
